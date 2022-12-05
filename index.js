@@ -51,7 +51,9 @@ app.get('/api/files', (req, res) => {
     return res.json(files);
   });
 });
-
+app.get('/api/get',(req,res)=>{
+  res.send("hello");
+})
 // app.get('/files/:filename', (req, res) => {
 //   gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
 //     // Check if file

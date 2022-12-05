@@ -38,7 +38,7 @@ const up = multer();
 
 const upload = multer({ storage });
 
-app.get('/api/files', (req, res) => {
+app.post('/api/files', (req, res) => {
   gfs.files.find().toArray((err, files) => {
     // Check if files
     if (!files || files.length === 0) {
@@ -51,7 +51,7 @@ app.get('/api/files', (req, res) => {
     return res.json(files);
   });
 });
-app.get('/api/get',(req,res)=>{
+app.post('/api/get',(req,res)=>{
   res.send("hello");
 })
 // app.get('/files/:filename', (req, res) => {

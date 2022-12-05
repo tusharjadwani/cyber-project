@@ -47,9 +47,7 @@ app.get('/api/files', (req, res) => {
   gfs.files.find().toArray((err, files) => {
     // Check if files
     if (!files || files.length === 0) {
-      return res.status(404).json({
-        err: 'No files exist'
-      });
+      return res.status(404)
     }
 
     // Files exist

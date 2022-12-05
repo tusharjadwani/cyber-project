@@ -4,22 +4,22 @@ const mongoose = require('mongoose');
 const { GridFsStorage } = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
 const cors = require('cors');
-const path=require('path');
+// const path=require('path');
 const dotenv= require('dotenv');
 dotenv.config({path:'./config.env'});
 const port = process.env.PORT || 5000;
 const app = express();
 app.use(express.json());
 app.use(cors())
-app.use(express.static(path.join(__dirname,'./client/build')))
+// app.use(express.static(path.join(__dirname,'./client/build')))
 
-app.get("/",()=>(req,res)=>{
-  res.sendFile(path.join(__dirname,'./client/build/index.html'))
-})
+// app.get("/",()=>(req,res)=>{
+//   res.sendFile(path.join(__dirname,'./client/build/index.html'))
+// })
 
-app.get("/admin",()=>(req,res)=>{
-  res.sendFile(path.join(__dirname,'./client/build/index.html'))
-})
+// app.get("/admin",()=>(req,res)=>{
+//   res.sendFile(path.join(__dirname,'./client/build/index.html'))
+// })
 
 const mongoURI =process.env.MONGO || "mongodb://localhost:27017/cybervie"
 const conn = mongoose.createConnection(mongoURI)
